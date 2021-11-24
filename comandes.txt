@@ -1,0 +1,28 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install matchbox-keyboard
+
+sudo rm -rf LCD-show 
+git clone https://github.com/goodtft/LCD-show.git 
+chmod -R 755 LCD-show 
+cd LCD-show/
+sudo ./LCD35-show
+
+
+	
+chmod -R 755 LCD-show 
+cd LCD-show/ 
+sudo ./LCD-hdmi
+
+ssh
+
+PVvLcPNaAHLAX7Hf47
+
+raspvid -o test.m -t p 1000
+//take a video
+mplayer -vo caca test.mp4 -fps 1
+
+raspistill -o image.jpg
+
+
+

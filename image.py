@@ -1,6 +1,6 @@
 import cv2
 import time
-thres = 0.45 # Threshold to detect object
+thres = 0.55 # Threshold to detect object
 t = time.time()
 
 cap = cv2.VideoCapture(0)
@@ -24,7 +24,7 @@ configPath = globalPath+"ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
 weightsPath = globalPath+"frozen_inference_graph.pb"
  
 net = cv2.dnn_DetectionModel(weightsPath,configPath)
-net.setInputSize(200,100)
+net.setInputSize(300,150)
 net.setInputScale(1.0/ 127.5)
 net.setInputMean((127.5, 127.5, 127.5))
 net.setInputSwapRB(True)

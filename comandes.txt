@@ -23,6 +23,8 @@ raspvid -o test.m -t p 1000
 //take a video
 mplayer -vo caca test.mp4 -fps 1
 
+or libcamera-hello
+
 raspistill -o image.jpg
 
 

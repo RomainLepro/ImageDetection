@@ -2,7 +2,7 @@ import cv2
 
 
 def show_webcam(mirror=False):
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture()
     ret_val, img = cam.read()
     if img is None:
         path = "/home/pi/Desktop/imageDetection/ImageDetection/lena.png"

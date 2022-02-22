@@ -1,5 +1,0 @@
-Camera recording videos
-Reading serial com with an arduino : saving logs with time stamps
-
-
-Processing videos to show speed while the video's playing.

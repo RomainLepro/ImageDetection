@@ -63,10 +63,14 @@ while True:
     cv2.imshow("Output",img)
 
     if cv2.waitKey(1) == 27 :#or cv2.XDestroyWindowEvent: 
+            cv2.destroyAllWindows()
+            cap.release()
             break  # esc to quit
             
-    if(t>tbegin+5): # break after 5s
+    if(t>tbegin+15): # break after 5s
+            cv2.destroyAllWindows()
+            cap.release()
             break
         
-cv2.destroyAllWindows()
+
     

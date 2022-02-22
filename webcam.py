@@ -1,5 +1,5 @@
 import cv2
-
+tbegin = time.time()
 
 def show_webcam(mirror=False):
     cam = cv2.VideoCapture()
@@ -15,7 +15,12 @@ def show_webcam(mirror=False):
         
         if cv2.waitKey(1) == 27: 
             break  # esc to quit
+            
+            
+        if(t>tbegin+5): # break after 5s
+            break
     cv2.destroyAllWindows()
+    
 
 
 def main():

@@ -17,7 +17,7 @@ success,img = cap.read()
 
  
 classNames= []
-globalPath = "D:\Files\Desktop\Rasp_Git\ImageDetection\\"
+globalPath = ".\\"
 classFile = globalPath+"coco.names"
 with open(classFile,"rt") as f:
     classNames = f.read().rstrip("\n").split("\n")
@@ -35,7 +35,6 @@ net.setInputSwapRB(True)
 print(classNames)
 print(len(classNames))
 
-
 while True:
 
     dt = time.time()-t
@@ -45,6 +44,7 @@ while True:
     success,img = cap.read()
     classIds, confs, bbox = net.detect(img,confThreshold=thres)
     print(classIds,bbox)
+    print(fps_value)
  
     if len(classIds) != 0:
         for classId, confidence,box in zip(classIds.flatten(),confs.flatten(),bbox):
@@ -55,11 +55,12 @@ while True:
     cv2.putText(img,str(round(fps_value,2)),(10,30),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
  
     cv2.imshow("Output",img)
-    cv2.waitKey(1)
 
     if cv2.waitKey(1) == 27 :#or cv2.XDestroyWindowEvent: 
             break  # esc to quit
             
-            
-    if(t>tbegin+5): # break after 5s
+    if(t>tbegin+15): # break after 5s
             break
+        
+cv2.destroyAllWindows()
+    

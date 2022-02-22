@@ -42,6 +42,12 @@ while True:
     fps_value = 1/dt
 
     success,img = cap.read()
+    
+    if img is None:
+        print("failed to access webcam")
+        path = "./lena.png"
+        img = image = cv2.imread(path)
+    
     classIds, confs, bbox = net.detect(img,confThreshold=thres)
     print(classIds,bbox)
     print(fps_value)
@@ -59,7 +65,7 @@ while True:
     if cv2.waitKey(1) == 27 :#or cv2.XDestroyWindowEvent: 
             break  # esc to quit
             
-    if(t>tbegin+15): # break after 5s
+    if(t>tbegin+5): # break after 5s
             break
         
 cv2.destroyAllWindows()

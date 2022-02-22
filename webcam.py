@@ -9,10 +9,8 @@ def show_webcam():
         path = "./lena.png"
         img = image = cv2.imread(path)
     cv2.imshow('my webcam', img)
-    
     while True:
          ret_val, img = cap.read()
-
          if cv2.waitKey(1) == 27: 
              cv2.destroyAllWindows()
              cap.release()
@@ -24,12 +22,9 @@ def show_webcam():
              break
          
     cv2.destroyAllWindows()
-    
-
 
 def main():
     show_webcam()
-
 
 if __name__ == '__main__':
     print("main")

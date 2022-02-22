@@ -17,7 +17,7 @@ success,img = cap.read()
 
  
 classNames= []
-globalPath = "D:\Files\Desktop\RaspGit\ImageDetection\\"
+globalPath = "D:\Files\Desktop\Rasp_Git\ImageDetection\\"
 classFile = globalPath+"coco.names"
 with open(classFile,"rt") as f:
     classNames = f.read().rstrip("\n").split("\n")

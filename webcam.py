@@ -5,7 +5,7 @@ def show_webcam(mirror=False):
     cam = cv2.VideoCapture()
     ret_val, img = cam.read()
     if img is None:
-        path = "/home/pi/Desktop/imageDetection/ImageDetection/lena.png"
+        path = "/home/pi/Desktop/Rasp_GIT/imageDetection/ImageDetection/lena.png"
         img = image = cv2.imread(path)
     cv2.imshow('my webcam', img)
     while True:
